@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+        .box {
+            padding: 15px;
+            align-items:center;
+            text-align:center;
+            border: 2px solid blue;
+        }
+      .attendance-input {
+        width: 90%;
+        font-size: 16px;
+        margin-bottom: 15px;
+    
+      }
+
+      .submit-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+
+      }
+    </style>
+  </head>
+  <body>
+      <div class="box">
+        <h1>Attendance System</h1>
+        <input type="number" class="attendance-input" placeholder="Write your code.">
+        <button class="submit-btn" onclick="checkAttendance()">Submit</button>
+      </div>
+    </div>
+    <script>
+        function checkAttendance() {
+          let input = document.querySelector('.attendance-input').value;
+          //check if input is correct code . If correct alert Attendance submitted, else Wrong Attendance code 
+            const correctCode="123456";
+            if (input === correctCode) {
+                alert("Attendance submitted.");
+            } else {
+                alert("Your attendance is wrong.");
+            }
+        }
+      </script>
+  </body>
+</html>

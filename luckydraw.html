@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucky Winner Picker (student edition)</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      #names {
+        width: 300px;
+        height: 150px;
+      }
+      #winner {
+        font-size: 24px;
+        margin-top: 20px;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Lucky Winner Picker</h1>
+    <p>Enter names separated by commas (,)</p>
+    <textarea id="names" name="names" rows="6" placeholder="Enter names."></textarea>
+    <br></br>
+    <button onclick="pickWinner()">Submit names?</button>
+    <div id="winner"></div>
+    <script>
+      function pickWinner() {
+        alert("Names have been submitted.");
+        let input = document.getElementById("names").value;
+        let namesArray = input
+          .split(",")
+          .map((name) => name.trim())
+          .filter((name) => name !== "");
+        if (namesArray.length === 0) {
+          alert("Please enter a valid number of names.");
+          return;
+        }
+        let randomIndex = Math.floor(Math.random() * namesArray.length);
+        let winner = namesArray[randomIndex];
+        document.getElementById("winner").textContent = "Winner: " + winner;
+      }
+    </script>
+  </body>
+</html>
